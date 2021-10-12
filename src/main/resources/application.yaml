@@ -13,3 +13,8 @@ spring:
             client-id: ${CLIENT_ID:""}
             client-secret: ${CLIENT_SECRET:""}
             authorization-grant-type: client_credentials
+
+spotify:
+  rest:
+    base-url: ${SPOTIFY_BASE_URL:https://api.spotify.com/v1}
+    search-path: ${SPOTIFY_SEARCH_PATH:/search}
