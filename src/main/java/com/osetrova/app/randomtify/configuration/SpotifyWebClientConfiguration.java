@@ -20,10 +20,10 @@ public class SpotifyWebClientConfiguration {
 
     @Bean
     public ReactiveClientRegistrationRepository clientRegistration(
-            @Value("${spring.security.oauth2.client.provider.spotify.token-uri}") String token_uri,
-            @Value("${spring.security.oauth2.client.registration.spotify.client-id}") String client_id,
-            @Value("${spring.security.oauth2.client.registration.spotify.client-secret}") String client_secret,
-            @Value("${spring.security.oauth2.client.registration.spotify.authorization-grant-type}") String authorizationGrantType
+            @Value("${spotify.security.token-uri}") String token_uri,
+            @Value("${spotify.security.client-id}") String client_id,
+            @Value("${spotify.security.client-secret}") String client_secret,
+            @Value("${spotify.security.authorization-grant-type}") String authorizationGrantType
     ) {
         ClientRegistration registration = ClientRegistration
                 .withRegistrationId("spotify")

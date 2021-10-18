@@ -2,19 +2,12 @@ spring:
   application:
     name: randomtify
 
-  security:
-    oauth2:
-      client:
-        provider:
-          spotify:
-            token-uri: ${SPOTIFY_AUTH_URL:""}
-        registration:
-          spotify:
-            client-id: ${CLIENT_ID:""}
-            client-secret: ${CLIENT_SECRET:""}
-            authorization-grant-type: client_credentials
-
 spotify:
   rest:
     base-url: ${SPOTIFY_BASE_URL:https://api.spotify.com/v1}
     search-path: ${SPOTIFY_SEARCH_PATH:/search}
+  security:
+    token-uri: ${SPOTIFY_AUTH_URL:""}
+    client-id: ${CLIENT_ID:""}
+    client-secret: ${CLIENT_SECRET:""}
+    authorization-grant-type: client_credentials

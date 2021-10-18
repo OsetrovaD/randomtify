@@ -1,17 +1,8 @@
 package com.osetrova.app.randomtify.client;
 
-import com.osetrova.app.randomtify.configuration.SpotifyConfig;
-import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
+import com.osetrova.app.randomtify.client.model.SpotifySearchResponse;
 
-@Service
-public class SpotifyClient {
+public interface SpotifyClient {
 
-    private final WebClient webClient;
-
-    public SpotifyClient(WebClient.Builder wcBuilder, SpotifyConfig spotifyConfig) {
-        System.out.println(spotifyConfig);
-        this.webClient = wcBuilder.baseUrl(spotifyConfig.getBaseUrl()).build();
-
-    }
+    SpotifySearchResponse findArtist(String artistNameQuery);
 }
