@@ -1,4 +1,4 @@
-package com.osetrova.app.randomtify.client.model;
+package com.osetrova.app.randomtify.client.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,9 +7,9 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ArtistHolder {
+public class ArtistHolderDto {
 
-    private List<Artist> items;
+    private List<ArtistDto> items;
     private int limit;
     private int offset;
     private int total;

@@ -1,6 +1,17 @@
 spring:
   application:
     name: randomtify
+  datasource:
+    url: jdbc:postgresql://${randomtify.db.host}:${randomtify.db.port}/${randomtify.db.name}
+    username: ${randomtify.db.user}
+    password: ${randomtify.db.password}
+    driver-class-name: ${randomtify.db.driver}
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: create
 
 spotify:
   rest:
@@ -11,3 +22,12 @@ spotify:
     client-id: ${CLIENT_ID:""}
     client-secret: ${CLIENT_SECRET:""}
     authorization-grant-type: client_credentials
+
+randomtify:
+  db:
+    host: ${DB_HOST:localhost}
+    port: ${DB_PORT:5432}
+    name: ${DB_NAME:randomtify}
+    user: ${DB_USER:""}
+    password: ${DB_PASSWORD:""}
+    driver: ${DB_DRIVER:org.postgresql.Driver}
