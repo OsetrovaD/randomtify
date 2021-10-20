@@ -1,6 +1,6 @@
 package com.osetrova.app.randomtify.client;
 
-import com.osetrova.app.randomtify.client.model.SpotifySearchResponse;
+import com.osetrova.app.randomtify.client.dto.SpotifySearchResponse;
 import com.osetrova.app.randomtify.configuration.SpotifyConfig;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

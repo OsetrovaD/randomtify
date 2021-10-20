@@ -1,7 +1,7 @@
 package com.osetrova.app.randomtify.controller;
 
 import com.osetrova.app.randomtify.client.SpotifyClient;
-import com.osetrova.app.randomtify.client.model.SpotifySearchResponse;
+import com.osetrova.app.randomtify.client.dto.SpotifySearchResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

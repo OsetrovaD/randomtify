@@ -1,4 +1,4 @@
-package com.osetrova.app.randomtify.client.model;
+package com.osetrova.app.randomtify.client.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class SpotifySearchResponse {
 
-    private ArtistHolder artists;
+    private ArtistHolderDto artists;
 }
