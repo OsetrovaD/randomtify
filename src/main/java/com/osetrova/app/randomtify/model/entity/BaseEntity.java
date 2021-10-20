@@ -15,6 +15,7 @@ public abstract class BaseEntity {
 
     @Id
     private UUID id;
+
     @Enumerated(EnumType.STRING)
     private Rating rating;
 
