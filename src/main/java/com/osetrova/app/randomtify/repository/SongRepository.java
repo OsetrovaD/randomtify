@@ -1,9 +1,8 @@
 package com.osetrova.app.randomtify.repository;
 
 import com.osetrova.app.randomtify.model.entity.Song;
-import org.springframework.data.repository.CrudRepository;
+import com.osetrova.app.randomtify.model.entity.SongId;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.UUID;
-
-public interface SongRepository extends CrudRepository<Song, UUID> {
+public interface SongRepository extends JpaRepository<Song, SongId> {
 }

@@ -19,7 +19,7 @@ public class SpotifyClientImpl implements SpotifyClient {
     public SpotifySearchResponse findArtist(String artistNameQuery) {
         return webClient
                 .get()
-                .uri(searchUrl + artistNameQuery) //todo: add search query
+                .uri(searchUrl + artistNameQuery)
                 .retrieve()
                 .bodyToMono(SpotifySearchResponse.class)
                 .block();
