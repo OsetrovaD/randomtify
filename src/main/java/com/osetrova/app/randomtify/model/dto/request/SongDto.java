@@ -6,9 +6,11 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class SongRequest {
+public class SongDto {
 
     private String name;
     private Rating rating;
     private String comment;
+    private String album;
+    private Integer year;
 }
