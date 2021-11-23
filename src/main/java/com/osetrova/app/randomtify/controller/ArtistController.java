@@ -25,7 +25,7 @@ public class ArtistController {
 
     private final ArtistService artistService;
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<ArtistResponse>> getAll() {
         return ResponseEntity.ok(artistService.getAll());
     }
