@@ -1,6 +1,13 @@
+server:
+  servlet:
+    context-path: /api
+
 spring:
   application:
     name: randomtify
+  jackson:
+    default-property-inclusion: non_empty
+
   datasource:
     url: jdbc:postgresql://${randomtify.db.host}:${randomtify.db.port}/${randomtify.db.name}
     username: ${randomtify.db.user}
@@ -9,6 +16,7 @@ spring:
   jpa:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: true
 #    generate-ddl: true
 #    hibernate:
 #      ddl-auto: create
