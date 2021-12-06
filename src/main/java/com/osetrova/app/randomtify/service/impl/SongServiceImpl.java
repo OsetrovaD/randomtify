@@ -25,7 +25,7 @@ public class SongServiceImpl implements SongService {
     public SavedSongsResponse save(List<SongDto> songRequests, String artistName) {
         List<SongDto> saved = new ArrayList<>();
         List<Song> songs = songRequests.stream()
-                .filter(songRequest -> songRepository.existsByIdArtistAndIdName(artistName, songRequest.getName()))
+                .filter(songRequest -> !songRepository.existsByIdArtistAndIdName(artistName, songRequest.getName()))
                 .peek(saved::add)
                 .map(songRequest -> songMapper.map(songRequest, artistName))
                 .toList();
@@ -43,6 +43,7 @@ public class SongServiceImpl implements SongService {
     }
 
     @Override
+    @Transactional
     public void delete(String songName, String artistName) {
         songRepository.deleteByIdArtistAndIdName(artistName, songName);
     }

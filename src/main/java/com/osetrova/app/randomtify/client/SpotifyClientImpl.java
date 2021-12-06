@@ -23,6 +23,5 @@ public class SpotifyClientImpl implements SpotifyClient {
                 .retrieve()
                 .bodyToMono(SpotifySearchResponse.class)
                 .block();
-
     }
 }

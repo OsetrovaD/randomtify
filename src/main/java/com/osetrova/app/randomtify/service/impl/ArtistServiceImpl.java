@@ -33,9 +33,8 @@ public class ArtistServiceImpl implements ArtistService {
     @Override
     @Transactional
     public void updateRating(Map<String, Rating> ratingUpdates) {
-        List<Artist> artists = artistRepository.findAllByNameIn(ratingUpdates.keySet()).stream()
-                .peek(artist -> artist.setRating(ratingUpdates.get(artist.getName())))
-                .toList();
+        List<Artist> artists = artistRepository.findAllByNameIn(ratingUpdates.keySet());
+        artists.forEach(artist -> artist.setRating(ratingUpdates.get(artist.getName())));
         artistRepository.saveAll(artists);
     }
 }
