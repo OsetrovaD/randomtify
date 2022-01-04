@@ -2,6 +2,7 @@ package com.osetrova.app.randomtify.service;
 
 import com.osetrova.app.randomtify.model.dto.response.ArtistResponse;
 import com.osetrova.app.randomtify.model.dto.response.ArtistResponseExtended;
+import com.osetrova.app.randomtify.model.entity.Artist;
 import com.osetrova.app.randomtify.model.entity.Rating;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface ArtistService {
     List<ArtistResponse> getAll();
 
     void updateRating(Map<String, Rating> ratingUpdates);
+
+    void save(Artist artist);
 }
