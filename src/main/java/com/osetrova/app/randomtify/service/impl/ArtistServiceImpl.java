@@ -37,4 +37,9 @@ public class ArtistServiceImpl implements ArtistService {
         artists.forEach(artist -> artist.setRating(ratingUpdates.get(artist.getName())));
         artistRepository.saveAll(artists);
     }
+
+    @Override
+    public void save(Artist artist) {
+        artistRepository.save(artist);
+    }
 }
