@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -48,6 +49,11 @@ public class SearchServiceImpl implements SearchService {
             artistService.save(mapper.map(result));
         }
         return mapper.mapToResponse(result);
+    }
+
+    @Override
+    public List<Alphabet> getAlphabets() {
+        return List.of(Alphabet.values());
     }
 
     private String getQueryFromAlphabet(Alphabet alphabet, Integer charsAmount) {
