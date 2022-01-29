@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1/spotify/search")
@@ -23,5 +25,10 @@ public class SpotifyController {
                                                           @RequestParam(required = false) Integer charsAmount) {
         RandomArtistResponse searchResponse = searchService.search(alphabet, query, charsAmount);
         return ResponseEntity.ok(searchResponse);
+    }
+
+    @GetMapping("/alphabets")
+    public ResponseEntity<List<Alphabet>> getAlphabets() {
+        return ResponseEntity.ok(searchService.getAlphabets());
     }
 }

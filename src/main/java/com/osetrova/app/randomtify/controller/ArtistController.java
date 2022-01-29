@@ -32,7 +32,10 @@ public class ArtistController {
 
     @GetMapping("/{name}")
     public ResponseEntity<ArtistResponseExtended> getById(@PathVariable String name) {
-        return ResponseEntity.ok(artistService.getByName(name));
+        ArtistResponseExtended artist = artistService.getByName(name);
+        return artist == null
+                ? ResponseEntity.notFound().build()
+                : ResponseEntity.ok(artist);
     }
 
     @PutMapping
